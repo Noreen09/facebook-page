@@ -1,41 +1,52 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import './Login.css';
+        
+        function Login() {
+          const [email, setEmail] = useState('');
+          const [password, setPassword] = useState('');
+          const [gender, setGender] = useState('');
+        
+          const handleLogin = (e) => {
+            e.preventDefault();
+          };
+        
+            return (
+            <div className="login">
+              <div className="login__container">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                  alt="Facebook Logo"
+        
+                />
+                <form>
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  
+                   <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-import { FaEye,FaEyeSlash } from 'react-icons/fa';
-function Login()
-{
-    const [email,setEmail]=useState();
-    const [password,setPassword]=useState();
-    const [passwordShown, setPasswordShown] = useState(false);
-    const emailHandler=(e)=>{
-        setEmail(e.target.value);
+          <input
+            type="gender"
+            placeholder="Gender"
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+          />
+          <button type="submit" onClick={handleLogin}>
+            Log In
+          </button>
+        </form>
+      </div>
+    </div>
+  );
     }
-    const passwordHandler=(e)=>{
-        setPassword(e.target.value);
-    }
-    const passwordShownHandler=(e)=>{
-        setPasswordShown(!passwordShown);
-    }
-    return(
-        <div>
-        <div className="login-container">
-        <input className='login-in' type="text" placeholder="Email" onChange={emailHandler}></input>
-        <input
-          type={passwordShown ? "text" : "password"}
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className='login-in'
-          
-        />
-         <span className='eye-splash' onClick={passwordShownHandler}>
-        {passwordShown ? <FaEye /> : <FaEyeSlash />}
-        </span> 
-        <button className="login-btn">Log in</button>
-        <p><a href='#'>Forgotten password?</a> </p>    
-        <button className="sign-btn">Create new account</button>
-        </div>    
-        </div>
-    );
-}
+
 
 export default Login;

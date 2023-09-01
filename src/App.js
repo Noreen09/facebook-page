@@ -1,13 +1,13 @@
-import Login from './components/login';
-
+import React from 'react';
 import './App.css';
+import Login from './components/Login';
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <Login/>
-    </div>
-  );
+    <>
+       <Login/>
+    </>
+  )
 }
 
 export default App;
