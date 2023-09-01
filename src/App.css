@@ -73,3 +73,9 @@ p{
 p a{
   color: #127ddb;
 }
+.eye-splash{
+  position: absolute;
+  float: right;
+  margin-top: -38px;
+  margin-left:290px;
+}
